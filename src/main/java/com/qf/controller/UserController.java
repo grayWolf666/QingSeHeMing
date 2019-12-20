@@ -21,4 +21,9 @@ public class UserController {
         log.debug("user="+user);
         return userService.addUser(user);
     }
+
+    @RequestMapping("/adminLogin")
+    public Integer loginStudent(@RequestBody User user) {
+        return userService.queryByNamePwd(user);
+    }
 }
